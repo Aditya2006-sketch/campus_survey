@@ -2,51 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Smart Campus Issue Portal</title>
+  <title>Our Campus | Smart Campus Portal</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <h1>🏫 Smart Campus Issue Reporting Portal</h1>
-  <p class="subtitle">Report campus issues easily and track resolution</p>
+<body class="campus-page">
 
-  <button id="themeToggle">🌙 Toggle Theme</button>
+  <div class="overlay">
+    <img src="logo.png" alt="College Logo" class="logo">
 
-  <form id="issueForm">
-    <input type="text" id="name" placeholder="Your Name (Optional)">
+    <h1>KITS College Campus</h1>
+    <p class="campus-text">
+      Welcome to our Smart Campus Initiative.  
+      This platform helps students report campus-related issues like
+      water, electricity, Wi-Fi, and infrastructure problems in a smart
+      and transparent way.
+    </p>
 
-    <select id="category" required>
-      <option value="">Select Issue Category</option>
-      <option>Water</option>
-      <option>Electricity</option>
-      <option>Wi-Fi</option>
-      <option>Infrastructure</option>
-    </select>
+    <a href="index.html" class="enter-btn">
+      🚀 Enter Issue Reporting Portal
+    </a>
+  </div>
 
-    <input type="text" id="location" placeholder="Location (Hostel / Block)" required>
-
-    <textarea id="description" placeholder="Describe the issue" required></textarea>
-
-    <select id="priority">
-      <option>Low</option>
-      <option>Medium</option>
-      <option>High</option>
-    </select>
-
-    <button type="submit">Submit Issue</button>
-  </form>
-
-  <select id="filterCategory" class="filter">
-    <option value="All">All Categories</option>
-    <option>Water</option>
-    <option>Electricity</option>
-    <option>Wi-Fi</option>
-    <option>Infrastructure</option>
-  </select>
-
-  <h2>📋 Reported Issues</h2>
-  <div id="issueList"></div>
-
-  <script src="script.js"></script>
 </body>
 </html>

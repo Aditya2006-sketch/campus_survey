@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h1>📊 Admin Dashboard</h1>
+
+<canvas id="issueChart" width="300"></canvas>
+<div id="adminIssues"></div>
+
+<script>
+let issues = JSON.parse(localStorage.getItem("issues")) || [];
+const adminIssues = document.getElementById("adminIssues");
+
+/* LOAD ISSUES */
+function loadIssues() {
+  adminIssues.innerHTML = "";
+  issues.forEach((issue, index) => {
+    adminIssues.innerHTML += `
+      <div class="issue-card">
+        <b>${issue.category}</b> - ${issue.location}<br>
+        ${issue.description}<br>
+        Priority: ${issue.priority}<br>
+        Status: <b>${issue.status}</b><br><br>
+        <button onclick="resolveIssue(${index})">Mark Resolved</button>
+      </div>
+    `;
+  });
+}
+
+/* RESOLVE */
+function resolveIssue(index) {
+  issues[index].status = "Resolved";
+  localStorage.setItem("issues", JSON.stringify(issues));
+  loadIssues();
+}
+
+/* CHART */
+const pending = issues.filter(i => i.status === "Pending").length;
+const resolved = issues.filter(i => i.status === "Resolved").length;
+
+new Chart(document.getElementById("issueChart"), {
+  type: "doughnut",
+  data: {
+    labels: ["Pending", "Resolved"],
+    datasets: [{
+      data: [pending, resolved]
+    }]
+  }
+});
+
+loadIssues();
+</script>
+
+</body>
+</html>

@@ -105,3 +105,75 @@ button {
   background: #1e1e1e;
   color: white;
 }
+/* CAMPUS PAGE */
+.campus-page {
+  background: url("campus.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.campus-page h1 {
+  color: #fff;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.campus-text {
+  color: #e0e0e0;
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.enter-btn {
+  text-decoration: none;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.enter-btn:hover {
+  transform: scale(1.08);
+}
+.dashboard-btn-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.dashboard-btn {
+  text-decoration: none;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
