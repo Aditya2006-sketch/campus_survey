@@ -1,42 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Anti-Ragging Awareness</title>
+  <meta charset="UTF-8">
+  <title>Anti-Ragging Report</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Anti-Ragging & Student Protection</h1>
-<p class="subtitle">Zero tolerance policy towards ragging</p>
+<h1>Anti-Ragging & Reporting System</h1>
+<p class="subtitle">Report incidents anonymously</p>
 
-<div class="issue-card">
-  <h3>🚫 What is Ragging?</h3>
-  <p>Ragging includes any act of harassment, bullying or humiliation of students.</p>
-  <!-- Images -->
-  <div class="info-images">
-    <img src="images/anti_ragging1.jpg" alt="No Ragging Poster">
-    <img src="images/anti_ragging2.jpg" alt="Awareness Program">
-  </div>
-</div>
+<form id="raggingForm">
 
-<div class="issue-card">
-  <h3>🛡️ Solutions & Preventive Steps</h3>
-  <ul>
-    <li>Anonymous reporting system</li>
-    <li>Anti-ragging committees</li>
-    <li>Regular awareness programs</li>
-    <li>Senior–junior mentorship</li>
-  </ul>
-  <!-- Images -->
-  <div class="info-images">
-    <img src="images/committee.jpg" alt="Committee Meeting">
-  </div>
-</div>
+  <input type="text" id="ragName" placeholder="Your Name (Optional)">
 
+  <select id="ragCategory" required>
+    <option value="">Select Category</option>
+    <option>Verbal</option>
+    <option>Physical</option>
+    <option>Cyber/Online</option>
+    <option>Other</option>
+  </select>
 
-<div style="text-align:center">
-  <a class="dashboard-btn" href="index.html">⬅ Back to Home</a>
-</div>
+  <input type="text" id="ragLocation" placeholder="Location (Hostel / Block)" required>
 
+  <button type="button" id="ragGetLocationBtn">📍 Get Exact Location</button>
+  <p id="ragLocationStatus"></p>
+
+  <textarea id="ragDescription" placeholder="Describe the incident" required></textarea>
+
+  <select id="ragPriority">
+    <option>Low</option>
+    <option>Medium</option>
+    <option>High</option>
+  </select>
+
+  <label><b>Upload Images (Optional, Multiple)</b></label>
+  <input type="file" id="ragImages" accept="image/*" multiple>
+  <div id="ragImagesPreview" class="images-preview"></div>
+
+  <button type="submit">Submit Report</button>
+</form>
+
+<h2>📋 Reported Ragging Incidents</h2>
+<div id="raggingList"></div>
+
+<script src="script.js"></script>
 </body>
 </html>

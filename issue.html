@@ -7,17 +7,13 @@
 </head>
 <body>
 
-
 <h1>🏫 Smart Campus Issue Portal</h1>
 <p class="subtitle">Report campus problems easily</p>
 
 <button id="themeToggle">🌙 Toggle Theme</button>
 <div style="text-align:center; margin-top:20px;">
-  <a class="dashboard-btn" href="women-safety.html">👩‍🦰 Women Safety</a>
-  <br><br>
   <a class="dashboard-btn" href="anti-ragging.html">🚫 Anti-Ragging</a>
 </div>
-
 
 <form id="issueForm">
 
@@ -44,9 +40,9 @@
     <option>High</option>
   </select>
 
-  <label><b>Upload Issue Image (Optional)</b></label>
-  <input type="file" id="issueImage" accept="image/*">
-  <img id="imagePreview">
+  <label><b>Upload Issue Images (Optional, Multiple)</b></label>
+  <input type="file" id="issueImages" accept="image/*" multiple>
+  <div id="imagesPreview" class="images-preview"></div>
 
   <button type="submit">Submit Issue</button>
 </form>
@@ -54,6 +50,8 @@
 <div class="dashboard-btn-container">
   <a href="dashboard.html" class="dashboard-btn">📊 Open Admin Dashboard</a>
 </div>
+
+
 
 <h2>📋 Reported Issues</h2>
 <div id="issueList"></div>

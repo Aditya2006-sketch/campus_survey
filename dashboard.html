@@ -8,7 +8,11 @@
 <body>
 
 <h1>📊 Admin Dashboard</h1>
-<canvas id="issueChart" width="300"></canvas>
+
+<div class="dashboard-card">
+  <canvas id="issueChart"></canvas>
+</div>
+
 <div id="adminIssues"></div>
 
 <script>
@@ -18,6 +22,10 @@ const adminIssues = document.getElementById("adminIssues");
 function loadIssues(){
   adminIssues.innerHTML = "";
   issues.forEach((issue, index) => {
+    let imagesHTML = "";
+    if(issue.images && issue.images.length > 0){
+      imagesHTML = issue.images.map(img => `<img src="${img}" style="width:100px;height:100px;object-fit:cover;margin:5px;border-radius:10px;">`).join("");
+    }
     adminIssues.innerHTML += `
       <div class="issue-card">
         <b>${issue.category}</b><br>
@@ -26,7 +34,7 @@ function loadIssues(){
         📝 ${issue.description}<br>
         Priority: ${issue.priority}<br>
         Status: <b>${issue.status}</b><br>
-        ${issue.image ? `<img src="${issue.image}" style="width:100%;border-radius:10px;margin-top:10px;">` : ""}
+        ${imagesHTML}
         <br><br>
         <button onclick="resolveIssue(${index})">Mark Resolved</button>
       </div>
