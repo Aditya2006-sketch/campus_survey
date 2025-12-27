@@ -1,61 +1,56 @@
 const form = document.getElementById("issueForm");
 const issueList = document.getElementById("issueList");
-const filter = document.getElementById("filterCategory");
+const imageInput = document.getElementById("issueImage");
+const preview = document.getElementById("imagePreview");
 const themeToggle = document.getElementById("themeToggle");
 
 let issues = JSON.parse(localStorage.getItem("issues")) || [];
 
-/* THEME TOGGLE */
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-});
+themeToggle.onclick = () => document.body.classList.toggle("dark-mode");
 
-/* FORM SUBMIT */
-form.addEventListener("submit", function(e) {
+imageInput.onchange = () => {
+  const file = imageInput.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    preview.src = reader.result;
+    preview.style.display = "block";
+  };
+  reader.readAsDataURL(file);
+};
+
+form.onsubmit = e => {
   e.preventDefault();
 
   const issue = {
-    name: document.getElementById("name").value || "Anonymous",
-    category: document.getElementById("category").value,
-    location: document.getElementById("location").value,
-    description: document.getElementById("description").value,
-    priority: document.getElementById("priority").value,
-    status: "Pending"
+    name: name.value || "Anonymous",
+    category: category.value,
+    location: location.value,
+    description: description.value,
+    priority: priority.value,
+    status: "Pending",
+    image: preview.src || null
   };
 
   issues.push(issue);
   localStorage.setItem("issues", JSON.stringify(issues));
   form.reset();
-  displayIssues(filter.value);
-});
+  preview.style.display="none";
+  preview.src="";
+  displayIssues();
+};
 
-/* FILTER */
-filter.addEventListener("change", () => {
-  displayIssues(filter.value);
-});
-
-/* DISPLAY ISSUES */
-function displayIssues(category = "All") {
-  issueList.innerHTML = "";
-  issues
-    .filter(issue => category === "All" || issue.category === category)
-    .forEach(issue => {
-      issueList.innerHTML += `
-        <div class="issue-card">
-          <strong>${issue.category}</strong><br>
-          Priority: 
-          <span class="priority-${issue.priority.toLowerCase()}">
-            ${issue.priority}
-          </span><br>
-          👤 ${issue.name}<br>
-          📍 ${issue.location}<br>
-          📝 ${issue.description}<br>
-          <div class="status ${issue.status === "Pending" ? "pending" : "resolved"}">
-            🔄 Status: ${issue.status}
-          </div>
-        </div>
-      `;
-    });
+function displayIssues(){
+  issueList.innerHTML="";
+  issues.forEach(issue=>{
+    issueList.innerHTML+=`
+      <div class="issue-card">
+        <b>${issue.category}</b> (${issue.priority})<br>
+        ${issue.location}<br>
+        ${issue.description}<br>
+        ${issue.image ? `<img src="${issue.image}" style="width:100%;margin-top:10px;border-radius:10px">` : ""}
+      </div>
+    `;
+  });
 }
-
 displayIssues();

@@ -7,52 +7,46 @@
 </head>
 <body>
 
-  <h1>🏫 Smart Campus Issue Reporting Portal</h1>
-  <p class="subtitle">Report campus issues easily and track resolution</p>
+<h1>🏫 Smart Campus Issue Portal</h1>
+<p class="subtitle">Report campus problems easily</p>
 
-  <button id="themeToggle">🌙 Toggle Theme</button>
+<button id="themeToggle">🌙 Toggle Theme</button>
 
-  <form id="issueForm">
-    <input type="text" id="name" placeholder="Your Name (Optional)">
+<form id="issueForm">
+  <input type="text" id="name" placeholder="Your Name (Optional)">
 
-    <select id="category" required>
-      <option value="">Select Issue Category</option>
-      <option>Water</option>
-      <option>Electricity</option>
-      <option>Wi-Fi</option>
-      <option>Infrastructure</option>
-    </select>
-
-    <input type="text" id="location" placeholder="Location (Hostel / Block)" required>
-
-    <textarea id="description" placeholder="Describe the issue" required></textarea>
-
-    <select id="priority">
-      <option>Low</option>
-      <option>Medium</option>
-      <option>High</option>
-    </select>
-
-    <button type="submit">Submit Issue</button>
-  </form>
-
-  <select id="filterCategory" class="filter">
-    <option value="All">All Categories</option>
+  <select id="category" required>
+    <option value="">Select Category</option>
     <option>Water</option>
     <option>Electricity</option>
     <option>Wi-Fi</option>
     <option>Infrastructure</option>
   </select>
 
-  <h2>📋 Reported Issues</h2>
-  <div id="issueList"></div>
+  <input type="text" id="location" placeholder="Location" required>
 
-  <script src="script.js"></script>
-  <div class="dashboard-btn-container">
-  <a href="dashboard.html" class="dashboard-btn">
-    📊 Open Admin Dashboard
-  </a>
+  <textarea id="description" placeholder="Describe the issue" required></textarea>
+
+  <select id="priority">
+    <option>Low</option>
+    <option>Medium</option>
+    <option>High</option>
+  </select>
+
+  <label><b>Upload Issue Image (Optional)</b></label>
+  <input type="file" id="issueImage" accept="image/*">
+  <img id="imagePreview">
+
+  <button type="submit">Submit Issue</button>
+</form>
+
+<div class="dashboard-btn-container">
+  <a href="dashboard.html" class="dashboard-btn">📊 Open Admin Dashboard</a>
 </div>
 
+<h2>📋 Reported Issues</h2>
+<div id="issueList"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
