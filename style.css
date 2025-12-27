@@ -2,47 +2,87 @@
 
 body{
   min-height:100vh;
-  background:linear-gradient(135deg,#667eea,#764ba2);
-  padding:30px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding:40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1,h2{text-align:center;color:#fff;margin-bottom:10px}
-.subtitle{text-align:center;color:#e0e0e0;margin-bottom:10px}
+h1{
+  text-align:center;
+  color:#ffffff;
+  font-size:34px;
+  margin-bottom:8px;
+  letter-spacing:1px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#cfd8dc;
+  font-size:16px;
+  margin-bottom:25px;
+}
+
+h2{
+  color:#ffffff;
+  text-align:center;
+  margin-top:40px;
+}
+
 
 form{
-  background:rgba(255,255,255,0.15);
-  padding:25px;
-  max-width:520px;
-  margin:auto;
-  border-radius:15px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding:30px;
+  max-width:560px;
+  margin:30px auto;
+  border-radius:18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
-input,select,textarea,button{
+
+input, select, textarea{
   width:100%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:8px;
+  padding:14px;
+  margin:12px 0;
+  border-radius:10px;
   border:none;
+  outline:none;
+  font-size:15px;
 }
 
 button{
-  background:#43cea2;
+  width:100%;
+  padding:14px;
+  background: linear-gradient(135deg,#00c6ff,#0072ff);
   color:white;
-  font-weight:bold;
+  font-size:16px;
+  font-weight:600;
+  border-radius:30px;
   cursor:pointer;
+  transition: all 0.3s ease;
 }
+
+button:hover{
+  transform: translateY(-2px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.35);
+}
+
 
 #getLocationBtn{
   background:#185a9d;
 }
 
 .issue-card{
-  background:#fff;
-  margin:15px auto;
-  padding:15px;
-  max-width:520px;
-  border-radius:15px;
+  background: rgba(255,255,255,0.95);
+  margin:20px auto;
+  padding:20px;
+  max-width:560px;
+  border-radius:16px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  line-height:1.6;
 }
+
 
 #imagePreview{
   width:100%;
@@ -87,4 +127,18 @@ button{
   color:white;
   border-radius:30px;
   text-decoration:none;
+}
+.info-images{
+  display:flex;
+  flex-wrap:wrap;
+  margin-top:10px;
+  gap:10px;
+}
+
+.info-images img{
+  width:150px;
+  height:100px;
+  object-fit:cover;
+  border-radius:10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
