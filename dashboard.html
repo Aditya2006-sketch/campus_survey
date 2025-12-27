@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -55,12 +56,11 @@ new Chart(document.getElementById("issueChart"), {
   type: "doughnut",
   data: {
     labels: ["Pending", "Resolved"],
-    datasets: [{ data: [pending, resolved] }]
+    datasets: [{ data: [pending, resolved], backgroundColor: ['#ff416c','#00c6ff'] }]
   }
 });
 
 loadIssues();
 </script>
-
 </body>
 </html>

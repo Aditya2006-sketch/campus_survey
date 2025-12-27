@@ -11,9 +11,7 @@
 <p class="subtitle">Report incidents anonymously</p>
 
 <form id="raggingForm">
-
   <input type="text" id="ragName" placeholder="Your Name (Optional)">
-
   <select id="ragCategory" required>
     <option value="">Select Category</option>
     <option>Verbal</option>
@@ -21,25 +19,19 @@
     <option>Cyber/Online</option>
     <option>Other</option>
   </select>
-
   <input type="text" id="ragLocation" placeholder="Location (Hostel / Block)" required>
-
   <button type="button" id="ragGetLocationBtn">📍 Get Exact Location</button>
   <p id="ragLocationStatus"></p>
-
   <textarea id="ragDescription" placeholder="Describe the incident" required></textarea>
-
   <select id="ragPriority">
     <option value="">Problem Level</option>
     <option>Low</option>
     <option>Medium</option>
     <option>High</option>
   </select>
-
   <label><b>Upload Images (Optional, Multiple)</b></label>
   <input type="file" id="ragImages" accept="image/*" multiple>
   <div id="ragImagesPreview" class="images-preview"></div>
-
   <button type="submit">Submit Report</button>
 </form>
 

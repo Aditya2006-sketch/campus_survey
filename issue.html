@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Smart Campus Issue Portal</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Smart Campus Issue Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -15,9 +15,7 @@
 </div>
 
 <form id="issueForm">
-
   <input type="text" id="name" placeholder="Your Name (Optional)">
-
   <select id="category" required>
     <option value="">Select Category</option>
     <option>Water</option>
@@ -25,33 +23,25 @@
     <option>Wi-Fi</option>
     <option>Infrastructure</option>
   </select>
-
   <input type="text" id="location" placeholder="Location (Hostel / Block)" required>
-
   <button type="button" id="getLocationBtn">📍 Get Exact Location</button>
   <p id="locationStatus"></p>
-
   <textarea id="description" placeholder="Describe the issue" required></textarea>
-
   <select id="priority">
     <option value="">Problem Level</option>
     <option>Low</option>
     <option>Medium</option>
     <option>High</option>
   </select>
-
   <label><b>Upload Issue Images (Optional, Multiple)</b></label>
   <input type="file" id="issueImages" accept="image/*" multiple>
   <div id="imagesPreview" class="images-preview"></div>
-
   <button type="submit">Submit Issue</button>
 </form>
 
 <div class="dashboard-btn-container">
   <a href="dashboard.html" class="dashboard-btn">📊 Open Admin Dashboard</a>
 </div>
-
-
 
 <h2>📋 Reported Issues</h2>
 <div id="issueList"></div>
