@@ -1,4 +1,4 @@
-// --- INDEX.HTML VARIABLES ---
+// --- INDEX.HTML LOGIC ---
 const form = document.getElementById("issueForm");
 const issueList = document.getElementById("issueList");
 const imagesInput = document.getElementById("issueImages");
@@ -11,10 +11,8 @@ let issues = JSON.parse(localStorage.getItem("issues")) || [];
 let exactLocation = "";
 let imagesArray = [];
 
-// Theme toggle
 themeToggle.onclick = ()=> document.body.classList.toggle("dark-mode");
 
-// Multiple image preview
 imagesInput.addEventListener("change", function(){
     imagesArray=[];
     imagesPreview.innerHTML="";
@@ -30,7 +28,6 @@ imagesInput.addEventListener("change", function(){
     });
 });
 
-// GPS for index.html
 getLocationBtn.onclick = ()=>{
     if(!navigator.geolocation){locationStatus.innerText="Geolocation not supported";return;}
     locationStatus.innerText="Fetching location...";
@@ -43,7 +40,6 @@ getLocationBtn.onclick = ()=>{
     );
 };
 
-// Submit index.html form
 form.onsubmit = e=>{
     e.preventDefault();
     const issue = {
@@ -84,7 +80,7 @@ function displayIssues(){
 }
 displayIssues();
 
-// --- ANTI-RAGGING FORM VARIABLES ---
+// --- ANTI-RAGGING LOGIC ---
 const ragForm = document.getElementById("raggingForm");
 const ragName = document.getElementById("ragName");
 const ragCategory = document.getElementById("ragCategory");
@@ -101,7 +97,6 @@ let raggingIssues = JSON.parse(localStorage.getItem("raggingIssues")) || [];
 let ragExactLocation = "";
 let ragImagesArray = [];
 
-// Multiple images preview
 ragImagesInput.addEventListener("change", function(){
     ragImagesArray=[];
     ragImagesPreview.innerHTML="";
@@ -117,7 +112,6 @@ ragImagesInput.addEventListener("change", function(){
     });
 });
 
-// GPS for anti-ragging
 ragGetLocationBtn.onclick = ()=>{
     if(!navigator.geolocation){ragLocationStatus.innerText="Geolocation not supported"; return;}
     ragLocationStatus.innerText="Fetching location...";
@@ -130,7 +124,6 @@ ragGetLocationBtn.onclick = ()=>{
     );
 };
 
-// Submit anti-ragging form
 ragForm.onsubmit = e=>{
     e.preventDefault();
     const ragIssue = {

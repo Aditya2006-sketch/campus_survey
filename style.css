@@ -1,9 +1,20 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI, sans-serif;}
 
 body{
   min-height:100vh;
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
   padding:40px 20px;
+
+  /* Animated gradient background for modern look */
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color:#fff;
+}
+
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 h1,h2{text-align:center;color:#fff;margin-bottom:10px}
@@ -51,6 +62,7 @@ button:hover{
   border-radius:16px;
   box-shadow: 0 12px 25px rgba(0,0,0,0.25);
   line-height:1.6;
+  color:#000;
 }
 
 .images-preview img{
@@ -87,6 +99,8 @@ button:hover{
 .dark-mode{
   background:linear-gradient(135deg,#141e30,#243b55);
 }
+
+/* campus.html specific */
 .campus-container{
   min-height:100vh;
   width:100%;
