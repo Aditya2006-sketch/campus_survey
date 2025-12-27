@@ -15,13 +15,15 @@
 let issues = JSON.parse(localStorage.getItem("issues")) || [];
 const adminIssues = document.getElementById("adminIssues");
 
-function loadIssues() {
+function loadIssues(){
   adminIssues.innerHTML = "";
   issues.forEach((issue, index) => {
     adminIssues.innerHTML += `
       <div class="issue-card">
-        <b>${issue.category}</b> - ${issue.location}<br>
-        ${issue.description}<br>
+        <b>${issue.category}</b><br>
+        📍 ${issue.location}<br>
+        🌐 ${issue.exactLocation}<br>
+        📝 ${issue.description}<br>
         Priority: ${issue.priority}<br>
         Status: <b>${issue.status}</b><br>
         ${issue.image ? `<img src="${issue.image}" style="width:100%;border-radius:10px;margin-top:10px;">` : ""}
@@ -32,7 +34,7 @@ function loadIssues() {
   });
 }
 
-function resolveIssue(index) {
+function resolveIssue(index){
   issues[index].status = "Resolved";
   localStorage.setItem("issues", JSON.stringify(issues));
   loadIssues();

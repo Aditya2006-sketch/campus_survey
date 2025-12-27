@@ -13,6 +13,7 @@
 <button id="themeToggle">🌙 Toggle Theme</button>
 
 <form id="issueForm">
+
   <input type="text" id="name" placeholder="Your Name (Optional)">
 
   <select id="category" required>
@@ -23,7 +24,10 @@
     <option>Infrastructure</option>
   </select>
 
-  <input type="text" id="location" placeholder="Location" required>
+  <input type="text" id="location" placeholder="Location (Hostel / Block)" required>
+
+  <button type="button" id="getLocationBtn">📍 Get Exact Location</button>
+  <p id="locationStatus"></p>
 
   <textarea id="description" placeholder="Describe the issue" required></textarea>
 
