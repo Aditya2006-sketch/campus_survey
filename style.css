@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 30px;
+  color: #333;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #e0e0e0;
+  margin-bottom: 15px;
+}
+
+#themeToggle {
+  display: block;
+  margin: 10px auto 20px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* FORM */
+form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  color: white;
+  cursor: pointer;
+}
+
+/* FILTER */
+.filter {
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* ISSUE CARDS */
+.issue-card {
+  background: #fff;
+  margin: 15px auto;
+  padding: 18px;
+  max-width: 520px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.status.pending { color: #ff9800; font-weight: bold; }
+.status.resolved { color: #4caf50; font-weight: bold; }
+
+.priority-low { color: #4caf50; font-weight: bold; }
+.priority-medium { color: #ff9800; font-weight: bold; }
+.priority-high { color: #f44336; font-weight: bold; }
+
+/* DARK MODE */
+.dark-mode {
+  background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+.dark-mode form {
+  background: rgba(0,0,0,0.4);
+}
+
+.dark-mode .issue-card {
+  background: #1e1e1e;
+  color: white;
+}
